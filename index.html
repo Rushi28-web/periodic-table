@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Periodic Table</title>
+</head>
+<body>
+    <link rel="stylesheet" href="style.css">
+    <header>
+        <h1>Interactive Periodic Table</h1>
+        <p>Click on any element to see detailed information</p>
+    </header>
+
+    <div class="controls">
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search by name or symbol...">
+            <button id="search-btn">Search</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--alkali-metal);"></div>
+            <span>Alkali Metals</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--alkaline-earth);"></div>
+            <span>Alkaline Earth Metals</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--transition-metal);"></div>
+            <span>Transition Metals</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--post-transition);"></div>
+            <span>Post-Transition Metals</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--metalloid);"></div>
+            <span>Metalloids</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--nonmetal);"></div>
+            <span>Nonmetals</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--halogen);"></div>
+            <span>Halogens</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--noble-gas);"></div>
+            <span>Noble Gases</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--lanthanide);"></div>
+            <span>Lanthanides</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--actinide);"></div>
+            <span>Actinides</span>
+        </div>
+    </div>
+
+    <div class="periodic-table" id="periodic-table">
+        <!-- Elements will be inserted here by JavaScript -->
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="element-details" id="element-details">
+        <h2>
+            <span id="detail-name">Element Name</span>
+            <button class="close-btn" id="close-details">&times;</button>
+        </h2>
+        <div class="detail-grid">
+            <div class="detail-item">
+                <div class="detail-label">Symbol</div>
+                <div class="detail-value" id="detail-symbol">-</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Atomic Number</div>
+                <div class="detail-value" id="detail-number">-</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Atomic Mass</div>
+                <div class="detail-value" id="detail-mass">-</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Category</div>
+                <div class="detail-value" id="detail-category">-</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Period</div>
+                <div class="detail-value" id="detail-period">-</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Group</div>
+                <div class="detail-value" id="detail-group">-</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Electron Configuration</div>
+                <div class="detail-value" id="detail-electron">-</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">State at Room Temp</div>
+                <div class="detail-value" id="detail-state">-</div>
+            </div>
+        </div>
+        
+        <div class="element-visualization">
+            <h3>3D Representation</h3>
+            <div class="element-sphere" id="element-sphere"></div>
+        </div>
+        
+        <div class="element-description" id="element-description">
+            Element description will appear here.
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
